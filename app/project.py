@@ -1,3 +1,4 @@
+import random
 from flask import Flask
 
 app = Flask(__name__)
@@ -40,4 +41,13 @@ def members ():
 
 print("")
 members()
+
+print("")
+print("Our program takes the length of the password and generates a random password of the same length ")
+
+password_len = int(input("Enter the length of password : "))
+All_words="abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+password = "".join(random.sample(All_words,password_len ))
+print("")
+print("Generated password is :  " ,password)
 app.run(host='0.0.0.0', port=5000)
